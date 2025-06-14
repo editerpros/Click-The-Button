@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Click the Button</title>
+  <link rel="stylesheet" href="style.css" />
+  <HTA:APPLICATION 
+  ID="com.editerpro.clickthebutton"
+  APPLICATIONNAME="Click The Button"
+  BORDER="thin"
+  CAPTION="yes"
+  SHOWINTASKBAR="yes"
+  SINGLEINSTANCE="yes"
+  WINDOWSTATE="normal"
+/>
+
+</head>
+<body>
+  <div id="startScreen">
+    <h1>Click the Button</h1>
+    <label for="mode">Choose Mode:</label>
+    <select id="mode">
+      <option value="classic">Classic</option>
+      <option value="duel">Duel</option>
+    </select>
+    <br /><br />
+    <button id="startGameBtn">Start Game</button>
+    <label>
+      <input type="checkbox" id="themeSwitch" /> Dark Mode
+    </label>
+  </div>
+
+  <div id="gameUI" class="hidden">
+    <div id="countdown">3</div>
+    <div id="timer">
+      <div id="timerBar"></div>
+    </div>
+
+    <div id="scoreClassic">
+      <h2>Score: <span id="score">0</span></h2>
+      <button id="clickButton">Click Me!</button>
+    </div>
+
+    <div id="duelArea" class="hidden">
+      <h2>Duel Mode</h2>
+      <input type="text" id="nameP1" placeholder="Player 1 name" />
+      <input type="text" id="nameP2" placeholder="Player 2 name" />
+      <div class="duel-scores">
+        <div>
+          <h3>P1 Score: <span id="scoreP1">0</span></h3>
+          <button id="clickP1">Click P1</button>
+        </div>
+        <div>
+          <h3>P2 Score: <span id="scoreP2">0</span></h3>
+          <button id="clickP2">Click P2</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="gameOver" class="hidden">
+      <div id="finalClassic" class="hidden">
+        <h2>Game Over!</h2>
+        <p>Your final score: <span id="finalScore">0</span></p>
+      </div>
+      <div id="finalDuel" class="hidden"></div>
+      <button id="restartBtn">Back to Menu</button>
+    </div>
+  </div>
+
+  <script src="confetti.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

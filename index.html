@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Click the Button</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Start Screen -->
+  <div id="startScreen">
+    <h1>Click the Button</h1>
+    <p id="playerInfo">👤 <span id="playerNameDisplay">Player</span></p>
+
+    <label for="mode">Choose Mode:</label>
+    <select id="mode">
+      <option value="classic">Classic</option>
+      <option value="duel">Duel</option>
+    </select>
+
+    <br><br>
+    <button id="startGameBtn">Start Game</button>
+    <button id="openSettingsBtn">Settings</button>
+    <button id="openStatsBtn">Stats</button>
+    <button id="openAchievementsBtn">Achievements</button>
+    <button id="openLeaderboardBtn">Leaderboard</button>
+    <button id="openProfileBtn">Profile</button>
+
+    <label><input type="checkbox" id="themeSwitch" /> Dark Mode</label>
+  </div>
+
+  <!-- Profile Screen -->
+  <div id="profileScreen" class="hidden">
+    <h2>Customize Profile</h2>
+    <label>Player Name:</label><br>
+    <input type="text" id="playerNameInput" placeholder="Enter name" /><br><br>
+    <label>Choose Avatar Emoji:</label><br>
+    <input type="text" id="playerAvatarInput" placeholder="😎" maxlength="2" /><br><br>
+    <button id="saveProfileBtn">Save Profile</button>
+    <button id="closeProfileBtn">Back</button>
+  </div>
+
+  <!-- Settings Screen -->
+  <div id="settingsScreen" class="hidden">
+    <h2>Settings</h2>
+    <label>Game Duration:
+      <select id="durationSelect">
+        <option value="10">10 seconds</option>
+        <option value="30">30 seconds</option>
+        <option value="60">60 seconds</option>
+      </select>
+    </label>
+    <br><br>
+    <label><input type="checkbox" id="soundToggle"> Enable Sound</label>
+    <p>Controller Connected: <span id="controllerStatus">No</span></p>
+    <button id="resetDataBtn">Reset All Data</button>
+    <br><br>
+    <button id="closeSettingsBtn">Back</button>
+  </div>
+
+  <!-- Stats Screen -->
+  <div id="statsScreen" class="hidden">
+    <h2>Statistics</h2>
+    <p>Total Clicks: <span id="statTotalClicks">0</span></p>
+    <p>Total Games Played: <span id="statGamesPlayed">0</span></p>
+    <p>High Score (Classic): <span id="statHighScore">0</span></p>
+    <p>Duel Wins: <span id="statWins">0</span></p>
+    <p>Duel Losses: <span id="statLosses">0</span></p>
+    <p>Duel Draws: <span id="statDraws">0</span></p>
+    <button id="closeStatsBtn">Back</button>
+  </div>
+
+  <!-- Achievements Screen -->
+  <div id="achievementsScreen" class="hidden">
+    <h2>Achievements</h2>
+    <ul id="achievementList">
+      <!-- filled dynamically -->
+    </ul>
+    <button id="shareAchievementsBtn">📤 Share My Achievements</button>
+    <button id="closeAchievementsBtn">Back</button>
+  </div>
+
+  <!-- Leaderboard Screen -->
+  <div id="leaderboardScreen" class="hidden">
+    <h2>🏆 Global Leaderboard</h2>
+    <ul id="leaderboardList"></ul>
+    <button id="closeLeaderboardBtn">Back</button>
+  </div>
+
+  <!-- Game UI -->
+  <div id="gameUI" class="hidden">
+    <div id="countdown">3</div>
+    <div id="timer"><div id="timerBar"></div></div>
+
+    <div id="scoreClassic">
+      <h2>Score: <span id="score">0</span></h2>
+      <button id="clickButton">Click Me!</button>
+    </div>
+
+    <div id="duelArea" class="hidden">
+      <h2>Duel Mode</h2>
+      <input type="text" id="nameP1" placeholder="Player 1 name" />
+      <input type="text" id="nameP2" placeholder="Player 2 name" />
+      <div class="duel-scores">
+        <div>
+          <h3>P1 Score: <span id="scoreP1">0</span></h3>
+          <button id="clickP1">Click P1</button>
+        </div>
+        <div>
+          <h3>P2 Score: <span id="scoreP2">0</span></h3>
+          <button id="clickP2">Click P2</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="gameOver" class="hidden">
+      <div id="finalClassic" class="hidden">
+        <h2>Game Over!</h2>
+        <p>Your final score: <span id="finalScore">0</span></p>
+        <button id="shareScoreBtn">📤 Share</button>
+      </div>
+      <div id="finalDuel" class="hidden"></div>
+      <button id="restartBtn">Back to Menu</button>
+    </div>
+  </div>
+
+  <!-- Floating Achievement Popup -->
+  <div id="achievementBox" class="hidden"></div>
+
+  <!-- Sounds -->
+  <audio id="clickSound" src="click.mp3" preload="auto"></audio>
+  <audio id="tickSound" src="tick.mp3" preload="auto"></audio>
+  <audio id="buzzerSound" src="buzzer.mp3" preload="auto"></audio>
+  <audio id="chimeSound" src="chime.mp3" preload="auto"></audio>
+
+  <!-- Scripts -->
+  <script src="confetti.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

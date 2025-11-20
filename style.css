@@ -1,0 +1,133 @@
+/* ----------------------------------------------------
+   iOS PACK: style.css — Full (glass UI + animations)
+----------------------------------------------------*/
+
+/* reset + base */
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{
+  margin:0;padding:0;
+  font-family:"SF Pro Rounded","Poppins",sans-serif;
+  background:linear-gradient(160deg,#0b0b0b 0%,#111 100%);
+  color:#fff;text-align:center;overflow-x:hidden;
+  transition:background .4s ease,color .4s ease;
+}
+.hidden{display:none!important}
+
+/* background glow */
+.bg-glow{position:fixed;width:420px;height:420px;background:rgba(0,200,255,.7);
+  filter:blur(130px);opacity:.35;border-radius:50%;animation:floaty 22s ease-in-out infinite alternate;
+  z-index:-1;top:10%;left:20%}
+@keyframes floaty{from{transform:translate(-20px,-10px)}to{transform:translate(20px,40px)}}
+.theme-blue .bg-glow{background:rgba(0,200,255,.8)}
+.theme-red .bg-glow{background:rgba(255,60,60,.8)}
+.theme-green .bg-glow{background:rgba(0,255,170,.8)}
+.theme-purple .bg-glow{background:rgba(190,120,255,.8)}
+
+/* screen (glass) */
+.screen{
+  background:rgba(255,255,255,.18);border-radius:28px;padding:28px;
+  width:90%;max-width:520px;margin:2.2em auto;
+  backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);
+  border:1px solid rgba(255,255,255,.28);box-shadow:0 20px 40px rgba(0,0,0,.25)
+}
+
+/* ios screen animations */
+.ios-screen{animation:iosScreenIn .55s cubic-bezier(.4,0,.2,1)}
+@keyframes iosScreenIn{from{opacity:0;transform:translateY(35px) scale(.96);filter:blur(6px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+.ios-screen-hide{animation:iosScreenOut .45s cubic-bezier(.4,0,.2,1)}
+@keyframes iosScreenOut{from{opacity:1;transform:translateY(0) scale(1)}to{opacity:0;transform:translateY(40px) scale(.96)}}
+
+/* app tiles (home) */
+.app-title{font-size:1.6rem;margin-bottom:8px}
+.tile-row{display:flex;gap:12px;justify-content:center;margin:12px 0}
+.app-tile{flex:1;max-width:150px;background:rgba(255,255,255,.08);border-radius:16px;padding:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.12);transition:transform .18s ease,background .18s}
+.app-tile:hover{transform:translateY(-6px);background:rgba(255,255,255,.11)}
+.tile-icon{font-size:1.6rem;margin-bottom:8px}
+.tile-label{font-size:.95rem}
+
+/* dock */
+.dock{display:flex;gap:10px;justify-content:center;margin-top:12px;opacity:.95}
+.dock-btn{background:rgba(255,255,255,.06);border-radius:999px;padding:8px 14px;border:1px solid rgba(255,255,255,.12);font-weight:600}
+
+/* big score and buttons */
+.big-score{font-size:3.6rem;font-weight:700;margin:12px 0;color:#fff;text-shadow:0 6px 18px rgba(0,0,0,.25)}
+.big-btn{display:inline-block;padding:18px 28px;border-radius:16px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);font-size:1.25rem;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.28)}
+.big-btn:hover{transform:translateY(-6px)}
+.big-btn.small{padding:12px 18px;font-size:1rem;border-radius:14px}
+
+/* duel */
+.duel-col{display:inline-block;width:45%;vertical-align:top}
+
+/* timer */
+.timer-bar{width:100%;height:12px;background:rgba(255,255,255,.22);border-radius:12px;margin-top:20px;overflow:hidden}
+.timer-fill{height:100%;width:100%;background:linear-gradient(90deg,#00eaff,#008cff);transition:width 1s linear;border-radius:12px}
+
+/* controls row */
+.row{display:flex;align-items:center;justify-content:center;gap:12px}
+.controls-top{justify-content:space-between;margin-bottom:10px}
+
+/* segmented control */
+.segmented{display:inline-flex;background:rgba(255,255,255,.06);border-radius:12px;padding:4px;border:1px solid rgba(255,255,255,.08)}
+.seg-item{padding:8px 14px;border-radius:8px;background:transparent;border:none;color:#fff;font-weight:600;cursor:pointer}
+.seg-item.active{background:rgba(255,255,255,.14);box-shadow:inset 0 -6px 18px rgba(0,0,0,.18)}
+.seg-item:focus{outline:none}
+
+/* iOS switch */
+.ios-switch{position:relative;display:inline-block;width:52px;height:32px}
+.ios-switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,.12);border-radius:999px;border:1px solid rgba(0,0,0,.08);transition:all .2s}
+.slider:before{position:absolute;content:"";height:24px;width:24px;left:4px;top:4px;background:#fff;border-radius:50%;transition:all .2s;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.ios-switch input:checked + .slider{background:linear-gradient(90deg,#00eaff,#008cff)}
+.ios-switch input:checked + .slider:before{transform:translateX(20px)}
+
+/* mini button */
+.mini-btn{padding:9px 14px;border-radius:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-weight:600}
+
+/* form rows */
+.form-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0;flex-wrap:wrap}
+
+/* profile preview */
+.profile-preview{margin-top:14px;font-weight:600}
+
+/* achievement popup fallback */
+.achievement-box{position:fixed;right:18px;bottom:18px;padding:12px 16px;border-radius:12px;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.18)}
+#achievementBox{display:none}
+
+/* ios banner */
+.ios-banner{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:40;width:calc(100% - 60px);max-width:520px}
+.ios-banner-inner{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.12);backdrop-filter:blur(16px);padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.18);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.ios-banner-icon{font-size:1.4rem}
+.ios-banner-text{text-align:left}
+.ios-banner .hidden{display:none}
+
+/* popup animation */
+.popup-animate{animation:popupZoom .45s cubic-bezier(.34,.97,.56,1.6)}
+@keyframes popupZoom{0%{transform:scale(.65) translateY(20px);opacity:0}60%{transform:scale(1.05) translateY(0);opacity:1}100%{transform:scale(1);opacity:1}}
+
+/* tap animation */
+.tap-anim{animation:tapScale .15s ease}
+@keyframes tapScale{0%{transform:scale(1)}40%{transform:scale(.92)}100%{transform:scale(1)}}
+
+/* Achievements styles */
+.ach-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.ach-controls{display:flex;gap:8px;align-items:center}
+#achSearch{padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;font-size:.95rem}
+.ach-list{display:grid;grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));gap:12px;margin-top:8px}
+.ach-card{background:rgba(255,255,255,0.06);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px;border:1px solid rgba(255,255,255,0.08);transition: transform .18s ease, box-shadow .18s;min-height:110px}
+.ach-card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,.28)}
+.ach-top{display:flex;align-items:center;gap:10px}
+.ach-icon{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06)}
+.ach-title{font-weight:700;font-size:1rem}
+.ach-desc{font-size:.88rem;opacity:.9;color:#ddd}
+.ach-progress{width:100%;height:10px;background:rgba(255,255,255,0.06);border-radius:10px;overflow:hidden;margin-top:6px;border:1px solid rgba(255,255,255,0.04)}
+.ach-bar{height:100%;width:0%;border-radius:10px;background:linear-gradient(90deg,rgba(0,230,255,0.9),rgba(0,120,255,0.9));transition:width .6s cubic-bezier(.2,.9,.25,1);box-shadow:0 6px 18px rgba(0,150,255,0.12) inset}
+.ach-meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:8px}
+.ach-meta .percent{font-weight:700;font-size:.95rem}
+.ach-meta .action-row{display:flex;gap:8px}
+.ach-locked{opacity:.6;filter:grayscale(.08)}
+.ach-unlocked{border:1px solid rgba(0,255,170,0.6);box-shadow:0 8px 30px rgba(0,255,170,0.06);background:linear-gradient(180deg,rgba(0,255,170,0.04),rgba(255,255,255,0.02))}
+.ach-unlocked .ach-bar{background:linear-gradient(90deg,rgba(0,255,170,0.95),rgba(0,200,120,0.9))}
+.ach-share{background:rgba(255,255,255,0.06);padding:6px 10px;border-radius:10px;font-size:.85rem;border:1px solid rgba(255,255,255,0.06)}
+
+/* responsive */
+@media (max-width:768px){.app-tile{max-width:44%}.tile-row{flex-wrap:wrap}.screen{padding:20px;margin:1.2em}.big-score{font-size:3rem}}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Click The Button — iOS Pack + Achievements</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-blue">
+
+  <!-- BACKGROUND GLOW -->
+  <div class="bg-glow"></div>
+
+  <!-- TOP ACHIEVEMENT BANNER -->
+  <div id="iosBanner" class="ios-banner hidden">
+    <div class="ios-banner-inner">
+      <div class="ios-banner-icon">🏆</div>
+      <div class="ios-banner-text">
+        <div id="iosBannerTitle">Achievement Unlocked</div>
+        <div id="iosBannerSub">Nice work!</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOME (app tiles) -->
+  <div id="homeScreen" class="screen ios-screen">
+    <h1 class="app-title">Click The Button</h1>
+    <div class="tile-row">
+      <button class="app-tile" data-open="gameUI"><div class="tile-icon">▶️</div><div class="tile-label">Play</div></button>
+      <button class="app-tile" data-open="settingsScreen"><div class="tile-icon">⚙️</div><div class="tile-label">Settings</div></button>
+      <button class="app-tile" data-open="profileScreen"><div class="tile-icon">👤</div><div class="tile-label">Profile</div></button>
+    </div>
+    <div class="tile-row">
+      <button class="app-tile" data-open="statsScreen"><div class="tile-icon">📊</div><div class="tile-label">Stats</div></button>
+      <button class="app-tile" data-open="achievementsScreen"><div class="tile-icon">🏆</div><div class="tile-label">Achievements</div></button>
+      <button class="app-tile" data-open="aboutScreen"><div class="tile-icon">ℹ️</div><div class="tile-label">About</div></button>
+    </div>
+    <div class="dock">
+      <button class="dock-btn" data-open="gameUI">Play</button>
+      <button class="dock-btn" data-open="settingsScreen">Settings</button>
+    </div>
+  </div>
+
+  <!-- GAME UI (classic only) -->
+  <div id="gameUI" class="screen hidden ios-screen">
+    <div class="row controls-top">
+      <!-- Removed segmented mode selector (duel removed) -->
+      <div style="flex:1"></div>
+
+      <div class="switch-row">
+        <label class="ios-switch">
+          <input id="soundToggle" type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+        <div class="switch-label">Sound</div>
+      </div>
+    </div>
+
+    <div id="countdown" class="countdown hidden">3</div>
+
+    <div id="scoreClassic" class="center-block">
+      <h2>Score</h2>
+      <div id="score" class="big-score">0</div>
+      <button id="clickButton" class="big-btn">Tap</button>
+    </div>
+
+    <div id="timer" class="timer-bar">
+      <div id="timerBar" class="timer-fill"></div>
+    </div>
+
+    <div class="row game-bottom">
+      <button id="endEarlyBtn" class="mini-btn">End Game</button>
+      <button id="backToHomeBtn" class="mini-btn">Home</button>
+    </div>
+
+    <!-- small hidden secret area for secretTap achievement -->
+    <div id="secretTapArea" title="secret" style="position: absolute; right: 18px; bottom: 18px; width: 28px; height: 28px; opacity: 0; cursor:pointer;"></div>
+  </div>
+
+  <!-- GAME OVER -->
+  <div id="gameOver" class="screen hidden ios-screen">
+    <h2>Game Over</h2>
+    <div id="finalClassic" class="result-block">Your Score: <span id="finalScore">0</span></div>
+    <button id="restartBtn" class="big-btn">Play Again</button>
+    <button id="homeFromOverBtn" class="mini-btn">Home</button>
+  </div>
+
+  <!-- SETTINGS -->
+  <div id="settingsScreen" class="screen hidden ios-screen">
+    <h2>Settings</h2>
+
+    <div class="form-row">
+      <label>Dark Mode</label>
+      <label class="ios-switch">
+        <input id="themeSwitch" type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="form-row">
+      <label>Sound</label>
+      <label class="ios-switch">
+        <input id="soundToggle2" type="checkbox" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="form-row">
+      <label>Game Duration</label>
+      <select id="durationSelect">
+        <option value="10">10 sec</option>
+        <option value="15">15 sec</option>
+        <option value="20">20 sec</option>
+        <option value="30">30 sec</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label>Theme</label>
+      <select id="themeSelect">
+        <option value="blue">Blue</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="purple">Purple</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <button id="resetDataBtn" class="mini-btn">Reset Data</button>
+      <button id="closeSettingsBtn" class="mini-btn">Back</button>
+    </div>
+  </div>
+
+  <!-- PROFILE -->
+  <div id="profileScreen" class="screen hidden ios-screen">
+    <h2>Profile</h2>
+    <input id="playerNameInput" type="text" placeholder="Your name" />
+    <input id="playerAvatarInput" type="text" placeholder="Emoji avatar (e.g. 😎)" maxlength="2" />
+    <div class="profile-preview">Preview: <span id="playerNameDisplay">👤 Player</span></div>
+    <div class="form-row">
+      <button id="saveProfileBtn" class="mini-btn">Save</button>
+      <button id="closeProfileBtn" class="mini-btn">Back</button>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div id="statsScreen" class="screen hidden ios-screen">
+    <h2>Stats</h2>
+    <ul>
+      <li>Total Clicks: <span id="statTotalClicks">0</span></li>
+      <li>Games Played: <span id="statGamesPlayed">0</span></li>
+      <li>High Score: <span id="statHighScore">0</span></li>
+      <li>Wins: <span id="statWins">0</span></li>
+      <li>Losses: <span id="statLosses">0</span></li>
+      <li>Draws: <span id="statDraws">0</span></li>
+    </ul>
+    <button id="closeStatsBtn" class="mini-btn">Back</button>
+  </div>
+
+  <!-- ACHIEVEMENTS -->
+  <div id="achievementsScreen" class="screen hidden ios-screen">
+    <div class="ach-header">
+      <h2>Achievements 🏆</h2>
+      <div class="ach-controls">
+        <select id="achCategoryFilter">
+          <option value="all">All</option>
+          <option value="general">General</option>
+          <option value="clicks">Clicks</option>
+          <option value="time">Time</option>
+          <option value="secret">Secret</option>
+          <option value="custom">Custom</option>
+        </select>
+        <input id="achSearch" type="text" placeholder="Search achievements..." />
+      </div>
+    </div>
+
+    <div id="achList" class="ach-list"></div>
+
+    <div class="form-row">
+      <button id="closeAchievementsBtn" class="mini-btn">Back</button>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="aboutScreen" class="screen hidden ios-screen">
+    <h2>About</h2>
+    <p>Click The Button — iOS Edition. Built with glass UI, smooth animations & achievements.</p>
+    <button class="mini-btn" id="closeAboutBtn">Back</button>
+  </div>
+
+  <!-- ACHIEVEMENT POPUP (fallback) -->
+  <div id="achievementBox" class="achievement-box"></div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      showScreen("homeScreen");
+    });
+  </script>
+</body>
+</html>

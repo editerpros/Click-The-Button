@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Click The Button – v1.5.3 FINAL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:,">
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="app">
+
+<!-- HOME -->
+<div id="homeScreen" class="screen active">
+  <div class="glass-card">
+    <h1 data-i18n="title">Click The Button</h1>
+    <button id="playBtn" data-i18n="play">Play</button>
+    <button id="statsBtn" data-i18n="stats">Stats</button>
+    <button id="achievementsBtn" data-i18n="achievements">Achievements</button>
+    <button id="settingsBtn" data-i18n="settings">Settings</button>
+    <button id="aboutBtn" data-i18n="about">About</button>
+  </div>
+</div>
+
+<!-- MODE -->
+<div id="modeScreen" class="screen">
+  <div class="glass-card">
+    <h2 data-i18n="selectMode">Select Mode</h2>
+    <button data-mode="classic" data-i18n="classic">Classic</button>
+    <button data-mode="duel" data-i18n="duel">Duel</button>
+    <button data-back data-i18n="back">Back</button>
+  </div>
+</div>
+
+<!-- PLAYER JOIN -->
+<div id="joinScreen" class="screen">
+  <div class="glass-card">
+    <h2 data-i18n="playerJoin">Player Join</h2>
+    <div id="joinP1" class="join-box active" data-i18n="player1Join">
+      🎮 Player 1 – Press Button
+    </div>
+    <div id="joinP2" class="join-box" data-i18n="player2Join">
+      🎮 Player 2 – Press Button
+    </div>
+    <button id="joinSkip" data-i18n="skip">Skip</button>
+  </div>
+</div>
+
+<!-- GAME -->
+<div id="gameUI" class="screen">
+  <div class="glass-card">
+    <div class="scores">
+      <span>P1: <b id="p1Score">0</b></span>
+      <span>P2: <b id="p2Score">0</b></span>
+    </div>
+    <button id="clickButton" class="main-btn" data-i18n="tap">TAP</button>
+    <div class="timer"><div id="timerBar"></div></div>
+  </div>
+</div>
+
+<!-- GAME OVER -->
+<div id="gameOver" class="screen">
+  <div class="glass-card">
+    <h2 data-i18n="gameOver">Game Over</h2>
+    <p id="finalScore"></p>
+    <button id="restartBtn" data-i18n="playAgain">Play Again</button>
+    <button id="homeBtn" data-i18n="home">Home</button>
+  </div>
+</div>
+
+<!-- STATS -->
+<div id="statsScreen" class="screen">
+  <div class="glass-card">
+    <h2 data-i18n="stats">Stats</h2>
+    <p><span data-i18n="highScore">High Score</span>: <b id="statHigh">0</b></p>
+    <p><span data-i18n="gamesPlayed">Games Played</span>: <b id="statGames">0</b></p>
+    <p><span data-i18n="duelGames">Duel Games</span>: <b id="statDuels">0</b></p>
+    <p><span data-i18n="totalClicks">Total Clicks</span>: <b id="statClicks">0</b></p>
+    <button data-back data-i18n="back">Back</button>
+  </div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+<div id="achievementsScreen" class="screen">
+  <div class="glass-card">
+    <h2 data-i18n="achievements">Achievements</h2>
+    <ul id="achievementList"></ul>
+    <button data-back data-i18n="back">Back</button>
+  </div>
+</div>
+
+<!-- SETTINGS -->
+<div id="settingsScreen" class="screen">
+  <div class="glass-card">
+    <h2 data-i18n="settings">Settings</h2>
+
+    <label for="languageSelect" data-i18n="language">Language</label>
+    <select id="languageSelect"></select>
+
+    <h3 data-i18n="keyboardControls">Keyboard Controls</h3>
+    <button id="bindP1Key" data-i18n="bindP1">Bind P1 Key</button>
+    <span id="p1KeyLabel"></span><br><br>
+
+    <button id="bindP2Key" data-i18n="bindP2">Bind P2 Key</button>
+    <span id="p2KeyLabel"></span>
+
+    <button data-back data-i18n="back">Back</button>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="aboutScreen" class="screen">
+  <div class="glass-card">
+    <h2 data-i18n="about">About</h2>
+    <p data-i18n="aboutText">Click The Button – v1.5.3 FINAL</p>
+    <button data-back data-i18n="back">Back</button>
+  </div>
+</div>
+
+</div>
+
+<div id="debugOverlay"></div>
+
+<script src="lang.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

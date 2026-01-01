@@ -1,0 +1,24 @@
+{
+  "name": "click-the-button",
+  "version": "1.5.3",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.editerpro.clickthebutton",
+    "productName": "Click the Button",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "editerpros",
+        "repo": "click-the-button"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    }
+  }
+}

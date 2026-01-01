@@ -1,0 +1,21 @@
+window.LANG = {
+  en:{title:"Click The Button",play:"Play",tap:"TAP",stats:"Stats",achievements:"Achievements",settings:"Settings",about:"About",selectMode:"Select Mode",classic:"Classic",duel:"Duel",gameOver:"Game Over",playAgain:"Play Again",home:"Home",back:"Back",language:"Language",highScore:"High Score",gamesPlayed:"Games Played",duelGames:"Duel Games",totalClicks:"Total Clicks",aboutText:"Version : 1.5.3"},
+
+  hi:{title:"बटन दबाएँ",play:"खेलें",tap:"दबाएँ",stats:"आँकड़े",achievements:"उपलब्धियाँ",settings:"सेटिंग्स",about:"जानकारी",selectMode:"मोड चुनें",classic:"क्लासिक",duel:"ड्यूल",gameOver:"खेल समाप्त",playAgain:"फिर से खेलें",home:"होम",back:"वापस",language:"भाषा",highScore:"उच्च स्कोर",gamesPlayed:"खेले गए गेम",duelGames:"ड्यूल गेम",totalClicks:"कुल क्लिक",aboutText:"संस्करण : 1.5.3"},
+
+  bn:{title:"বোতাম টিপুন",play:"খেলুন",tap:"ট্যাপ",stats:"পরিসংখ্যান",achievements:"অর্জন",settings:"সেটিংস",about:"সম্পর্কে",selectMode:"মোড নির্বাচন",classic:"ক্লাসিক",duel:"ডুয়েল",gameOver:"খেলা শেষ",playAgain:"আবার খেলুন",home:"হোম",back:"ফিরুন",language:"ভাষা",highScore:"সর্বোচ্চ স্কোর",gamesPlayed:"খেলা সংখ্যা",duelGames:"ডুয়েল গেম ",totalClicks: "মোট ক্লিক ",aboutText: "সংস্করণ: 1.5.3"},
+  
+  or:{title:"ବଟନ୍ ଦବାନ୍ତୁ",play:"ଖେଳନ୍ତୁ",tap:"ଦବାନ୍ତୁ",stats:"ସଂଖ୍ୟାତ୍ମକ ତଥ୍ୟ",achievements:"ସଫଳତା",settings:"ସେଟିଂସ୍",about:"ବିଷୟରେ",selectMode:"ମୋଡ୍ ବାଛନ୍ତୁ",classic:"କ୍ଲାସିକ୍",duel:"ଡୁଏଲ୍",gameOver:"ଖେଳ ସମାପ୍ତ",playAgain:"ପୁଣି ଖେଳନ୍ତୁ",home:"ହୋମ୍",back:"ପଛକୁ",language:"ଭାଷା",highScore:"ସର୍ବୋଚ୍ଚ ସ୍କୋର୍",gamesPlayed:"ଖେଳାଯାଇଥିବା ଖେଳ",duelGames:"ଡୁଏଲ୍ ଖେଳ",totalClicks:"ମୋଟ କ୍ଲିକ୍ସ୍",aboutText:"ସଂସ୍କରଣ: 1.5.3"},
+  
+  te:{title:"బటన్ నొక్కండి",play:"ఆడండి",tap:"నొక్కండి",stats:"గణాంకాలు",achievements:"సాధనలు",settings:"సెట్టింగ్స్",about:"గురించి",selectMode:"మోడ్ ఎంచుకోండి",classic:"క్లాసిక్",duel:"డ్యూయల్",gameOver:"ఆట ముగిసింది",playAgain:"మళ్లీ ఆడండి",home:"హోమ్",back:"వెనక్కి",language:"భాష",highScore:"హై స్కోర్",gamesPlayed:"ఆడిన ఆటలు",duelGames:"డ్యూయల్ ఆటలు",totalClicks:"మొత్తం క్లిక్స్",aboutText:"వెర్షన్: 1.5.3"},
+
+  mr:{title:"बटण दाबा",play:"खेळा",tap:"दाबा",stats:"आकडेवारी",achievements:"साध्य",settings:"सेटिंग्स",about:"माहिती",selectMode:"मोड निवडा",classic:"क्लासिक",duel:"ड्युएल",gameOver:"खेळ संपला",playAgain:"पुन्हा खेळा",home:"होम",back:"मागे",language:"भाषा",highScore:"उच्च स्कोअर",gamesPlayed:"खेळांची संख्या",duelGames:"ड्युएल खेळ",totalClicks:"एकूण क्लिक",aboutText:"आवृत्ती: १.५.३"},
+
+  ta:{title:"பொத்தானை அழுத்தவும்",play:"விளையாடு",tap:"அழுத்து",stats:"புள்ளிவிவரம்",achievements:"சாதனைகள்",settings:"அமைப்புகள்",about:"பற்றி",selectMode:"முறை தேர்வு",classic:"கிளாசிக்",duel:"டூயல்",gameOver:"விளையாட்டு முடிந்தது",playAgain:"மீண்டும் விளையாடு",home:"முகப்பு",back:"பின்",language:"மொழி",highScore:"அதிக மதிப்பெண்",gamesPlayed:"விளையாடியவை",duelGames:"டூயல் விளையாட்டுகள்",totalClicks:"மொத்த கிளிக்குகள்",aboutText:"பதிப்பு: 1.5.3"},
+
+  gu:{title:"બટન દબાવો",play:"રમો",tap:"દબાવો",stats:"આંકડા",achievements:"સિદ્ધિઓ",settings:"સેટિંગ્સ",about:"વિશે",selectMode:"મોડ પસંદ કરો",classic:"ક્લાસિક",duel:"ડ્યુઅલ",gameOver:"રમત પૂર્ણ",playAgain:"ફરી રમો",home:"હોમ",back:"પાછા",language:"ભાષા",highScore:"ઉચ્ચ સ્કોર",gamesPlayed:"રમતો",duelGames:"ડ્યુઅલ રમતો",totalClicks:"કુલ ક્લિક્સ",aboutText:"સંસ્કરણ: 1.5.3"},
+
+  kn:{title:"ಬಟನ್ ಒತ್ತಿ",play:"ಆಡಿ",tap:"ಒತ್ತಿ",stats:"ಅಂಕಿಅಂಶಗಳು",achievements:"ಸಾಧನೆಗಳು",settings:"ಸೆಟ್ಟಿಂಗ್‌ಗಳು",about:"ಬಗ್ಗೆ",selectMode:"ಮೋಡ್ ಆಯ್ಕೆ",classic:"ಕ್ಲಾಸಿಕ್",duel:"ಡ್ಯೂಯಲ್",gameOver:"ಆಟ ಮುಗಿಯಿತು",playAgain:"ಮತ್ತೆ ಆಡಿ",home:"ಹೋಮ್",back:"ಹಿಂದೆ",language:"ಭಾಷೆ",highScore:"ಹೈ ಸ್ಕೋರ್",gamesPlayed:"ಆಟಗಳು",duelGames:"ಡ್ಯೂಯಲ್ ಆಟಗಳು",totalClicks:"ಒಟ್ಟು ಕ್ಲಿಕ್ಕುಗಳು",aboutText:"ಆವೃತ್ತಿ: 1.5.3"},
+
+  ml:{title:"ബട്ടൺ അമർത്തുക",play:"കളിക്കുക",tap:"അമർത്തുക",stats:"സ്ഥിതിവിവരക്കണക്കുകൾ",achievements:"നേട്ടങ്ങൾ",settings:"ക്രമീകരണങ്ങൾ",about:"കുറിച്ച്",selectMode:"മോഡ് തിരഞ്ഞെടുക്കുക",classic:"ക്ലാസിക്",duel:"ഡ്യൂയൽ",gameOver:"കളി അവസാനിച്ചു",playAgain:"വീണ്ടും കളിക്കുക",home:"ഹോം",back:"തിരിച്ച്",language:"ഭാഷ",highScore:"ഉയർന്ന സ്കോർ",gamesPlayed:"കളികൾ",duelGames:"ഡ്യൂയൽ കളികൾ",totalClicks:"മൊത്തം ക്ലിക്കുകൾ",aboutText:"പതിപ്പ് : 1.5.3"}
+};

@@ -1,0 +1,7 @@
+{
+  "latest_version": "1.5.3",
+  "min_supported": "1.5.2",
+  "apk": "https://github.com/USERNAME/ClickTheButton-Releases/releases/download/v1.6.0/ClickTheButton.apk",
+  "changelog": "New features & fixes",
+  "force": false
+}
